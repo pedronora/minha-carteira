@@ -37,7 +37,7 @@ def consolidar_bd(queryset):
             op.save(update_fields=['contabil', 'soma_total',
                     'soma_quantidade', 'preco_medio'])
         else:
-            if op.tipo in 'CBD':
+            if op.tipo in 'CDS':
                 ultima_operacao = queryset[n-1]
                 soma_total = ultima_operacao.soma_total + op.total_nota
                 soma_quantidade = ultima_operacao.soma_quantidade + op.quantidade

@@ -37,7 +37,7 @@ class Operacao(models.Model):
         ('C', 'Compra'),
         ('V', 'Venda'),
         ('D', 'Desdobramento'),
-        ('A', 'Amortização')
+        ('S', 'Subscrição')
     ]
 
     data = models.DateField()

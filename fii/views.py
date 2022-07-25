@@ -152,8 +152,8 @@ class ListarOperacao(LoginRequiredMixin, CreateView):
             form.instance.user = self.request.user
             return super().form_valid(form)
         except IntegrityError:
-            messages.warning(
-                self.request, f'{form.cleaned_data["fii"]} já está adicionada!')
+            messages.error(
+                self.request, f'{form.cleaned_data["fii"]} já está adicionado!')
             return HttpResponseRedirect(reverse_lazy('fii:listar_meus_fiis'))
 
 

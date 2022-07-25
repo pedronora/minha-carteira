@@ -8,7 +8,7 @@ class FIIAdmin(admin.ModelAdmin):
 
 
 class OperacaoAdmin(admin.ModelAdmin):
-    list_display = ('nr_nota', 'data', 'tipo', 'acao', 'preco',
+    list_display = ('nr_nota', 'data', 'tipo', 'fii', 'preco',
                     'quantidade', 'custos', 'total_nota', 'user')
 
 

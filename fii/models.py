@@ -61,4 +61,4 @@ class Operacao(models.Model):
         verbose_name_plural = "Operações"
 
     def __str__(self):
-        return f'{self.data} | {self.acao} | Qtd: {self.quantidade} | Preço: R$ {self.preco:.2f}'
+        return f'{self.data} | {self.fii} | Qtd: {self.quantidade} | Preço: R$ {self.preco:.2f}'

@@ -19,7 +19,7 @@
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
-            <tr>
+            <tr class="align-middle text-center">
                 <th>Logo</th>
                 <th>Código</th>
                 <th>Empresa</th>
@@ -31,7 +31,7 @@
         <tbody>
             {% for item in lista %}
 
-            <tr class="align-middle">
+            <tr class="align-middle text-center">
                 <td><img class="img-thumbnail" src="{{ item.fii.image_url }}" alt="Logo: {{ item.fii.codigo }}"
                         alt="Logo: {{ item.fii.codigo }}" width="45px"></td>
                 <td>{{ item.fii.codigo }}</td>
@@ -50,7 +50,7 @@
             {% endfor %}
         </tbody>
         <tfoot>
-            <tr class="align-middle">
+            <tr class="align-middle text-center">
                 <td><strong>Total</strong></td>
                 <td><strong>{{ count }}</strong></td>
                 <td></td>

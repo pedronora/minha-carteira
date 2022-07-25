@@ -18,7 +18,7 @@
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
-            <tr>
+            <tr class="align-middle text-center">
                 <th>Data</th>
                 <th>Nr. Nota</th>
                 <th>Tipo</th>
@@ -35,7 +35,7 @@
         {% if operacao_list %}
         <tbody>
             {% for operacao in operacao_list %}
-            <tr class="align-middle">
+            <tr class="align-middle text-center">
                 <td>{{ operacao.data | date:'d/m/Y' }}</td>
                 <td>{{ operacao.nr_nota }}</td>
                 <td>{{ operacao.get_tipo_display }}</td>

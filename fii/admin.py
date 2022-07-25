@@ -4,12 +4,12 @@ from .models import FII, Operacao
 
 # Register your models here.
 class FIIAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'codigo')
+    list_display = ('codigo', 'nome')
 
 
 class OperacaoAdmin(admin.ModelAdmin):
     list_display = ('data', 'nr_nota', 'tipo', 'fii', 'preco',
-                    'quantidade', 'custos', 'nota_total')
+                    'quantidade', 'custos', 'total_nota')
 
 
 admin.site.register(FII, FIIAdmin)

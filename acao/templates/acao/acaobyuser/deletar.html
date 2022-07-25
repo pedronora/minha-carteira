@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Apagar: {{ acaobyuser }}</h1>
+
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="mt-4 mb-4">
+        <p>Desejas apagar <strong>{{ acaobyuser }}</strong>?</p>
+        <p>Isso implicará a exclusão de todas as operações relacionadas.</p>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-6">
+            <input class="btn btn-danger" type="submit" value="Apagar">
+        </div>
+        <div class="col-6 text-end">
+            <a href="{% url 'acao:listar_minhas_acoes' %}">Voltar</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

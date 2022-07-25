@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+
+<h1 class="mb-4">Entrar</h1>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Usuário" required>
+        <label for="InputText" class="form-label">Usuário</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Senha" required>
+        <label for="InputPassword" class="form-label">Senha</label>
+    </div>
+    <input type="submit" , value="Entrar" class="btn btn-primary">
+</form>
+
+<div class="mt-4">
+    <p>Ainda não tem uma conta? Cadastre-se <a href="{% url 'usuarios:registrar' %}">aqui</a>!<br />
+    Esqueceu sua senha? Recupere <a href="{% url 'usuarios:password_reset' %}">aqui</a>!</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4802fcd3-a2f3-4a4f-a6f6-f285e21eabd0/microsoft.web/sites/subscriptions/4802fcd3-a2f3-4a4f-a6f6-f285e21eabd0/resourceGroups/minhacarteira/providers/Microsoft.Web/sites/minha-carteira",
+    "appService.deploySubpath": "."
+}

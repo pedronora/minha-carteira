@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Apagar: {{ acao }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <p>Tem certeza que desejas apagar?</p>
+    </div>
+    <div class="row w-50 mb-3">
+        <img src="{{ acao.image_url }}" alt="{{ acao }}">
+    </div>
+    <div class="row">
+        <p><strong>Código:</strong> {{ acao.codigo }}</p>
+    </div>
+    <div class="row">
+        <p><strong>Empresa:</strong> {{acao.nome}}</p>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-6">
+            <input class="btn btn-danger" type="submit" value="Apagar">
+        </div>
+        <div class="col-6 text-end">
+            <a href="{% url 'acao:listar_acao' %}">Voltar</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

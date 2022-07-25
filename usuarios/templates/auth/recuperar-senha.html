@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>Recuperar senha</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="align-items-center">
+
+            <p>Esqueceu sua senha?<br />
+               Forneça seu endereço de email, e enviaremos um<br />email com instruções para configurar uma nova.</p>
+
+        <div class="mb-3">
+            <div class="form-floating">
+                <input class="form-control" type="email" name="email" autocomplete="email" required id="id_email" placeholder="Endereço de email">
+                <label for="id_email" class="form-label">Endereço de email</label>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <input class="btn btn-primary mt-3" type="submit" value="Recuperar minha senha">
+                </div>
+                <div class="col-6 text-end">
+                    <a href="{% url 'usuarios:entrar' %}">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>Meus FIIs</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div class="row align-items-center mt-3 mb-3">
+        <div class="col-3">
+            {{ form.fii }}
+        </div>
+        <div class="col-3">
+            <input class="btn btn-sm btn-primary" type="submit" value="Adicionar">
+        </div>
+
+    </div>
+</form>
+
+{% if lista %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Código</th>
+                <th>Empresa</th>
+                <th>Quantidade</th>
+                <th>$ Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in lista %}
+
+            <tr class="align-middle text-center">
+                <td><img class="img-thumbnail" src="{{ item.fii.image_url }}" alt="Logo: {{ item.fii.codigo }}"
+                        alt="Logo: {{ item.fii.codigo }}" width="45px"></td>
+                <td>{{ item.fii.codigo }}</td>
+                <td>{{ item.fii.nome }}</td>
+                <td>{{ item.soma_quantidade | floatformat:0 }}</td>
+                <td>R$ {{ item.soma_total | floatformat:2 }}</td>
+                <td>
+                    <a class="btn btn-outline-success"
+                        href="{% url 'fii:adicionar_operacao' pk=item.fii.pk %}">Operar</a>
+                    <a class="btn btn-outline-primary"
+                        href="{% url 'fii:detalhes_operacoes_fii' pk=item.fii.pk %}">Detalhes</a>
+                    <a class="btn btn-outline-danger" href="{% url 'fii:deletar_fii_user' pk=item.pk %}">Apagar</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr class="align-middle text-center">
+                <td><strong>Total</strong></td>
+                <td><strong>{{ count }}</strong></td>
+                <td></td>
+                <td></td>
+                <td><strong>R$ {{ total | floatformat:2 }}</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-primary text-center mt-5">
+    <p class="fs-2"><strong>Você ainda não possui FIIs!</strong></p>
+    <p>Selecione um na lista e após clique no botão "Adicionar" para começar!</p>
+</div>
+{% endif %}
+{% endblock %}

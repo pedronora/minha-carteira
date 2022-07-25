@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1>Detalhes: {{ fii }}</h1>
+
+
+<div class="row w-50 mb-3">
+    <img class="img-thumbnail"src="{{ fii.image_url }}" alt="Logo {{ fii.codigo }}">
+</div>
+<div class="row">
+    <p><strong>Código:</strong> {{ fii.codigo }}</p>
+</div>
+<div class="row">
+    <p><il class="list-group-item"><strong>Fundo:</strong> {{ fii.nome }}</il></p>
+</div>
+<div class="row">
+    <a href="{% url 'fii:listar_fii' %}">Voltar</a>
+</div>
+{% endblock%}

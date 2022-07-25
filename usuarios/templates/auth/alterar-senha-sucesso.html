@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="mb-4">Senha alterada com sucesso!</h1>
+
+<div class="d-flex flex-wrap justify-content-center fs-4">
+    <p>Clique no botão abaixo para retornar ao início!</p>
+</div>
+<div class="d-flex flex-wrap justify-content-center">
+    <a class="btn btn-primary" href="{% url 'home' %}">INÍCIO</a>
+</div>
+
+{% endblock %}

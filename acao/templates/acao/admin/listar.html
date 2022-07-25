@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>AÇÕES CADASTRADAS</h1>
+<p><a href="{% url 'acao:adicionar_acao' %}">Adicionar nova</a></p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Código</th>
+                <th>Empresa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for acao in acao_list %}
+            <tr class="align-middle">
+                <td><img class="img-thumbnail" src="{{ acao.image_url }}" alt="Logo: {{ acao.codigo }}" alt="Logo: {{ acao.codigo }}" width="45px"></td>
+                <td>{{ acao.codigo }}</td>
+                <td>{{ acao.nome }}</td>
+                <td>
+                    <a class="btn btn-outline-success" href="{% url 'acao:editar_acao' pk=acao.pk %}">Editar</a>
+                    <a class="btn btn-outline-primary" href="{% url 'acao:detalhes_acao' pk=acao.pk %}">Detalhes</a>
+                    <a class="btn btn-outline-danger" href="{% url 'acao:deletar_acao' pk=acao.pk %}">Apagar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>Recuperar senha</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="row align-items-center">
+        <div class="col-6">
+            <p>Esqueceu sua senha? Forneça seu endereço de email, e enviaremos um email com instruções para configurar uma nova.</p>
+        </div>
+        <div class="mb-3 col-6">
+            <div class="form-floating mb-3">
+                <input class="form-control" type="password" name="new_password1" autocomplete="new-passowrd" required id="id_new_password1" placeholder="Nova senha">
+                <label for="id_new_password1" class="form-label">Nova senha</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" type="password" name="new_password2" autocomplete="new-passowrd" required id="id_new_password2" placeholder="Confirmar senha">
+                <label for="id_new_password2" class="form-label">Confirmar senha</label>
+            </div>
+            <input class="btn btn-primary mt-3" type="submit" value="Alterar senha">
+        </div>
+    </div>
+</form>
+{% endblock %}

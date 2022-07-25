@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1>Adicionar</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="row">
+        <div class="form-floating mb-3 mt-2 ml-auto gx-1">
+            {{ field }}
+            {{ field.label_tag}}
+        </div>        
+    </div>
+    {% endfor %}
+    <div class="row align-items-center">
+        <div class="col">
+            <input class="btn btn-primary" type="submit" value='Adicionar'>
+        </div>
+        <div class="col text-end">
+            <a href="{% url 'fii:listar_fii' %}">Voltar</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>Senha Alterada com Sucesso!</h1>
+<div class="d-flex flex-wrap justify-content-center fs-3">
+    <p>Faça o seu login para entrar!</p>
+</div>
+<div class="d-flex flex-wrap justify-content-center">
+    <a class="btn btn-primary" href="{% url 'usuarios:entrar' %}">ENTRAR</a>
+</div>
+
+{% endblock %}

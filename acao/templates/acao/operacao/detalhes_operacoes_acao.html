@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1>Detalhes:</h1>
+
+<ul class="list-group-flush w-50">
+    <il class="list-group-item pt-2 pb-2">
+        <img class="img-thumbnail w-25" src="{{ acao.image_url }}" alt="Logo {{ acao.codigo }}">
+    </il>
+    <il class="list-group-item pb-2">Código: {{ acao.codigo }}</il>
+    <il class="list-group-item pb-2">Empresa: {{ acao.nome }}</il>
+    <il class="list-group-item pb-2 pt-4"><a class="btn btn-outline-success" href="{% url 'acao:adicionar_operacao' pk=acao.pk %}">Operar</a></il>
+</ul>
+
+
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Nr. Nota</th>
+                <th>Tipo</th>
+                <th>Preço</th>
+                <th>Qtde</th>
+                <th>Custos</th>
+                <th>Total Nota</th>
+                <th>Qtde Total</th>
+                <th>$ Total</th>
+                <th>PM</th>
+                <th></th>
+            </tr>
+        </thead>
+        {% if operacao_list %}
+        <tbody>
+            {% for operacao in operacao_list %}
+            <tr class="align-middle text-center">
+                <td>{{ operacao.data | date:'d/m/Y' }}</td>
+                <td>{{ operacao.nr_nota }}</td>
+                <td>{{ operacao.get_tipo_display }}</td>
+                <td>R$ {{ operacao.preco |floatformat:2 }}</td>
+                <td>{{ operacao.quantidade }}</td>
+                <td>R$ {{ operacao.custos | floatformat:2 }}</td>
+                <td>R$ {{ operacao.total_nota | floatformat:2 }}</td>
+                <td>{{ operacao.soma_quantidade | floatformat:0 }}</td>
+                <td>R$ {{ operacao.soma_total | floatformat:2 }}</td>
+                <td>R$ {{ operacao.preco_medio | floatformat:2 }}</td>
+                <td><a class="btn btn-outline-info" href="{% url 'acao:editar_operacao' pk=operacao.id %}">Editar</a></td>
+                <td><a class="btn btn-outline-danger" href="{% url 'acao:deletar_operacao' pk=operacao.id %}">Apagar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+    </table>
+</div>
+<p>Não há operações cadastradas!</p>
+{% endif %}
+
+<a href="{% url 'acao:listar_minhas_acoes' %}">Voltar</a>
+
+{% endblock%}

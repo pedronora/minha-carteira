@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>FIIs CADASTRADOS</h1>
+<p><a href="{% url 'fii:adicionar_fii' %}">Adicionar novo</a></p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Código</th>
+                <th>Fundo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in fii_list %}
+            <tr class="align-middle">
+                <td><img class="img-thumbnail" src="{{ item.image_url }}" alt="Logo: {{ item.codigo }}" alt="Logo: {{ item.codigo }}" width="45px"></td>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nome }}</td>
+                <td>
+                    <a class="btn btn-outline-success" href="{% url 'fii:editar_fii' pk=item.pk %}">Editar</a>
+                    <a class="btn btn-outline-primary" href="{% url 'fii:detalhes_fii' pk=item.pk %}">Detalhes</a>
+                    <a class="btn btn-outline-danger" href="{% url 'fii:deletar_fii' pk=item.pk %}">Apagar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

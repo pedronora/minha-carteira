@@ -8,8 +8,8 @@ class FIIAdmin(admin.ModelAdmin):
 
 
 class OperacaoAdmin(admin.ModelAdmin):
-    list_display = ('data', 'nr_nota', 'tipo', 'fii', 'preco',
-                    'quantidade', 'custos', 'total_nota')
+    list_display = ('nr_nota', 'data', 'tipo', 'acao', 'preco',
+                    'quantidade', 'custos', 'total_nota', 'user')
 
 
 admin.site.register(FII, FIIAdmin)

@@ -35,7 +35,7 @@
         {% if operacao_list %}
         <tbody>
             {% for operacao in operacao_list %}
-            <tr class="align-middle text-center">
+            <tr class="align-middle">
                 <td>{{ operacao.data | date:'d/m/Y' }}</td>
                 <td>{{ operacao.nr_nota }}</td>
                 <td>{{ operacao.get_tipo_display }}</td>

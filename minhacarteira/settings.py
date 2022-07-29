@@ -29,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = False
 
-ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net']
+ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://minha-carteira.azurewebsites.net']
 
@@ -144,6 +144,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home:home'
+
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

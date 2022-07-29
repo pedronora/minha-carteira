@@ -40,6 +40,7 @@ CSRF_TRUSTED_ORIGINS = ['https://minha-carteira.azurewebsites.net']
 INSTALLED_APPS = [
     'acao.apps.AcaoConfig',
     'fii.apps.FiiConfig',
+    'home.apps.HomeConfig',
     'usuarios.apps.UsuariosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -91,8 +92,8 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
-        'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'}
+        'PORT': os.getenv('DB_PORT'),
+        # 'OPTIONS': {'sslmode': 'require'}
     }
 }
 

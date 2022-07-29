@@ -22,6 +22,5 @@ urlpatterns = [
     path('acao/', include('acao.urls')),
     path('fii/', include('fii.urls')),
     path('usuarios/', include('usuarios.urls')),
-    # TODO: Criar página principal
-    path('', RedirectView.as_view(url="acao/"), name='home')
+    path('', include('home.urls'))
 ]

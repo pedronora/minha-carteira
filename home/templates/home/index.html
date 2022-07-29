@@ -4,7 +4,8 @@
 
 <div class="row align-items-center">
     <div class="col-4">
-        <h1>Seja Bem-Vindo {{ user.first_name }}!</h1>
+        <h1>Seja Bem-Vindo(a) {{ user.first_name }}!</h1>
+        <p class="fs-6">Seu último acesso foi em: {{user.last_login | date:'d/m/Y H:i' }}</p>
     </div>
     
     <div class="col">

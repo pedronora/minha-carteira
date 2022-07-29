@@ -29,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', False)
 
-ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net', '127.0.0.1']
+ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://minha-carteira.azurewebsites.net']
 

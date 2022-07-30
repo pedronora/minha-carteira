@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content%}
+
 <h1>AÇÕES CADASTRADAS</h1>
 <p><a href="{% url 'acao:adicionar_acao' %}">Adicionar nova</a></p>
 <div class="table-responsive">
@@ -16,7 +17,8 @@
         <tbody>
             {% for acao in acao_list %}
             <tr class="align-middle">
-                <td><img class="img-thumbnail" src="{{ acao.image_url }}" alt="Logo: {{ acao.codigo }}" alt="Logo: {{ acao.codigo }}" width="45px"></td>
+                <td><img class="img-thumbnail" src="{{ acao.image_url }}" alt="Logo: {{ acao.codigo }}"
+                        alt="Logo: {{ acao.codigo }}" width="45px"></td>
                 <td>{{ acao.codigo }}</td>
                 <td>{{ acao.nome }}</td>
                 <td>
@@ -28,5 +30,5 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endblock %}
 </div>
-{% endblock %}

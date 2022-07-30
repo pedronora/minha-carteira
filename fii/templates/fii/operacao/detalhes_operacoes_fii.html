@@ -10,7 +10,8 @@
     </il>
     <il class="list-group-item pb-2">Código: {{ fii.codigo }}</il>
     <il class="list-group-item pb-2">Fundo: {{ fii.nome }}</il>
-    <il class="list-group-item pb-2 pt-4"><a class="btn btn-outline-success" href="{% url 'fii:adicionar_operacao' pk=fii.pk %}">Operar</a></il>
+    <il class="list-group-item pb-2 pt-4"><a class="btn btn-outline-success"
+            href="{% url 'fii:adicionar_operacao' pk=fii.pk %}">Operar</a></il>
 </ul>
 
 
@@ -46,13 +47,15 @@
                 <td>{{ operacao.soma_quantidade | floatformat:0 }}</td>
                 <td>R$ {{ operacao.soma_total | floatformat:2 }}</td>
                 <td>R$ {{ operacao.preco_medio | floatformat:2 }}</td>
-                <td><a class="btn btn-outline-info" href="{% url 'fii:editar_operacao' pk=operacao.id %}">Editar</a></td>
-                <td><a class="btn btn-outline-danger" href="{% url 'fii:deletar_operacao' pk=operacao.id %}">Apagar</a></td>
+                <td><a class="btn btn-outline-info" href="{% url 'fii:editar_operacao' pk=operacao.id %}">Editar</a>
+                </td>
+                <td><a class="btn btn-outline-danger" href="{% url 'fii:deletar_operacao' pk=operacao.id %}">Apagar</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
-        </table>
-        {% else %}
+    </table>
+    {% else %}
     </table>
 </div>
 <p>Não há operações cadastradas!</p>

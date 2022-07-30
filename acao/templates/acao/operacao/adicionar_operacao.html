@@ -7,12 +7,12 @@
     {% csrf_token %}
 
     <div class="row">
-        <div class="form-floating col-6 mb-3 mt-2 ml-auto gx-1">
+        <div class="form-floating col-6 mb-3 mt-2 pe-1 gx-1">
             {{ form.data }}
             {{ form.data.label_tag}}
             <div class="text-danger mt-1">{{ form.data.errors}}</div>
         </div>
-        <div class="form-floating form-floating col-6 mb-3 mt-2 ml-auto gx-1">
+        <div class="form-floating col-6 mb-3 mt-2 ps-1 gx-1">
             {{ form.nr_nota }}
             {{ form.nr_nota.label_tag}}
             <div class="text-danger mt-1">{{ form.nr_nota.errors}}</div>
@@ -20,12 +20,12 @@
     </div>
 
     <div class="row">
-        <div class="form-floating col-6 mb-3 mt-2 ml-auto gx-1">
+        <div class="form-floating col-6 mb-3 mt-2 pe-1 gx-1">
             {{ form.tipo }}
             {{ form.tipo.label_tag}}
             <div class="text-danger mt-1">{{ form.tipo.errors}}</div>
         </div>
-        <div class="form-floating form-floating col-6 mb-3 mt-2 ml-auto gx-1">
+        <div class="form-floating col-6 mb-3 mt-2 ps-1 gx-1">
             {{ form.preco }}
             {{ form.preco.label_tag}}
             <div class="text-danger mt-1">{{ form.preco.errors}}</div>
@@ -33,19 +33,19 @@
     </div>
 
     <div class="row">
-        <div class="form-floating col-6 mb-3 mt-2 ml-auto gx-1">
+        <div class="form-floating col-6 mb-3 mt-2 pe-1 gx-1">
             {{ form.quantidade }}
             {{ form.quantidade.label_tag}}
             <div class="text-danger mt-1">{{ form.quantidade.errors}}</div>
         </div>
-        <div class="form-floating col-6 mb-3 mt-2 ml-auto gx-1">
+        <div class="form-floating col-6 mb-3 mt-2 ps-1 gx-1">
             {{ form.custos }}
             {{ form.custos.label_tag}}
             <div class="text-danger mt-1">{{ form.custos.errors}}</div>
         </div>
     </div>
     <div class="row align-items-center">
-        <div class="col-6">
+        <div class="col-6 p-0">
             <input class="btn btn-primary" type="submit" value='Adicionar'>
         </div>
         <div class="col-6 text-end">
@@ -53,6 +53,5 @@
         </div>
     </div>
 </form>
-
 
 {% endblock %}

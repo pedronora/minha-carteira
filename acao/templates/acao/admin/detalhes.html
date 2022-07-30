@@ -4,15 +4,16 @@
 
 <h1>Detalhes: {{ acao }}</h1>
 
-
-<div class="row w-50 mb-3">
-    <img class="img-thumbnail"src="{{ acao.image_url }}" alt="Logo {{ acao.codigo }}">
+<div class="row mb-3">
+    <img class="img-thumbnail w-25" src="{{ acao.image_url }}" alt="Logo {{ acao.codigo }}">
 </div>
 <div class="row">
     <p><strong>Código:</strong> {{ acao.codigo }}</p>
 </div>
 <div class="row">
-    <p><il class="list-group-item"><strong>Empresa:</strong> {{ acao.nome }}</il></p>
+    <p>
+        <il class="list-group-item"><strong>Empresa:</strong> {{ acao.nome }}</il>
+    </p>
 </div>
 <div class="row">
     <a href="{% url 'acao:listar_acao' %}">Voltar</a>

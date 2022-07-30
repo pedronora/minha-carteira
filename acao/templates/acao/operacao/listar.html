@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 {% for item in lista %}
-    
+
                 <tr class="align-middle text-center">
                     <td><img class="img-thumbnail" src="{{ item.acao.image_url }}" alt="Logo: {{ item.acao.codigo }}"
                             alt="Logo: {{ item.acao.codigo }}" width="45px"></td>
@@ -43,10 +43,11 @@
                             href="{% url 'acao:adicionar_operacao' pk=item.acao.pk %}">Operar</a>
                         <a class="btn btn-outline-primary"
                             href="{% url 'acao:detalhes_operacoes_acao' pk=item.acao.pk %}">Detalhes</a>
-                        <a class="btn btn-outline-danger" href="{% url 'acao:deletar_acao_user' pk=item.pk %}">Apagar</a>
+                        <a class="btn btn-outline-danger"
+                            href="{% url 'acao:deletar_acao_user' pk=item.pk %}">Apagar</a>
                     </td>
                 </tr>
-    
+
                 {% endfor %}
             </tbody>
             <tfoot>
@@ -68,4 +69,5 @@
     <p>Selecione uma na lista e após clique no botão "Adicionar" para começar!</p>
 </div>
 {% endif %}
+
 {% endblock %}

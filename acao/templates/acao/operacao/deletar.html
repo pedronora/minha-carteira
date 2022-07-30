@@ -3,8 +3,6 @@
 {% block content %}
 
 <h1>Apagar: {{ operacao.acao }}</h1>
-
-
 <form method="post">
     {% csrf_token %}
 
@@ -47,12 +45,10 @@
         <div class="col-6 text-nowrap">
             <input class="btn btn-danger" type="submit" value="Apagar">
         </div>
-        <div class="col-6 text-nowrap text-end">
+        <div class="col-6 text-end">
             <a href="{% url 'acao:detalhes_operacoes_acao' pk=operacao.acao.id %}">Voltar</a>
         </div>
     </div>
-
-    
 </form>
 
 

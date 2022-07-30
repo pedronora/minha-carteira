@@ -7,15 +7,15 @@
         <h1>Seja Bem-Vindo(a) {{ user.first_name }}!</h1>
         <p class="fs-6">Seu último login foi em: {{user.last_login | date:'d/m/Y H:i' }}</p>
     </div>
-    
+
     <div class="col">
-        <p class="fs-2">Você investe em <strong>{{ acao_count }}</strong> empresas e <strong>{{ fii_count }}</strong> FIIs</p>
+        <p class="fs-2">Você investe em <strong>{{ acao_count }}</strong> empresas e <strong>{{ fii_count }}</strong>
+            FIIs</p>
         <p class="fs-2">Já foram cadastradas <strong>{{ op_count }}</strong> operações</p>
         <p class="fs-2">Você já investiu: R$ <strong>{{ soma_total | floatformat:2}}</strong></p>
-
     </div>
 </div>
-<div class="row mt-3">
+<div class="row p-3">
     <div class="col-4"></div>
     <div class="col">
         <a class="btn btn-primary btn-lg" href="{% url 'acao:listar_minhas_acoes' %}">AÇÕES</a>

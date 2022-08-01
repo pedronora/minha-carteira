@@ -26,8 +26,6 @@
                 <th>Quantidade</th>
                 <th>$ Total</th>
                 <th></th>
-                <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -42,13 +40,9 @@
                 <td>R$ {{ item.soma_total | floatformat:2 }}</td>
                 <td>
                     <a class="btn btn-outline-success"
-                        href="{% url 'fii:adicionar_operacao' pk=item.fii.pk %}">Operar</a>
-                </td>
-                <td>
+                    href="{% url 'fii:adicionar_operacao' pk=item.fii.pk %}">Operar</a>
                     <a class="btn btn-outline-primary"
                     href="{% url 'fii:detalhes_operacoes_fii' pk=item.fii.pk %}">Detalhes</a>
-                </td>
-                <td>
                     <a class="btn btn-outline-danger" href="{% url 'fii:deletar_fii_user' pk=item.pk %}">Apagar</a>
                 </td>
             </tr>

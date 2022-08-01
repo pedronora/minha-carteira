@@ -26,8 +26,6 @@
                     <th>Quantidade</th>
                     <th>$ Total</th>
                     <th></th>
-                    <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -42,13 +40,9 @@
                     <td>R$ {{ item.soma_total | floatformat:2 }}</td>
                     <td>
                         <a class="btn btn-outline-success"
-                            href="{% url 'acao:adicionar_operacao' pk=item.acao.pk %}">Operar</a>
-                    </td>
-                    <td>
+                        href="{% url 'acao:adicionar_operacao' pk=item.acao.pk %}">Operar</a>
                         <a class="btn btn-outline-primary"
                         href="{% url 'acao:detalhes_operacoes_acao' pk=item.acao.pk %}">Detalhes</a>
-                    </td>
-                    <td>
                         <a class="btn btn-outline-danger"
                         href="{% url 'acao:deletar_acao_user' pk=item.pk %}">Apagar</a>
                     </td>

@@ -31,6 +31,7 @@
                 <th>$ Total</th>
                 <th>PM</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         {% if operacao_list %}
@@ -47,9 +48,11 @@
                 <td>{{ operacao.soma_quantidade | floatformat:0 }}</td>
                 <td>R$ {{ operacao.soma_total | floatformat:2 }}</td>
                 <td>R$ {{ operacao.preco_medio | floatformat:2 }}</td>
-                <td><a class="btn btn-outline-info" href="{% url 'fii:editar_operacao' pk=operacao.id %}">Editar</a>
+                <td>
+                    <a class="btn btn-outline-info" href="{% url 'fii:editar_operacao' pk=operacao.id %}">Editar</a>
                 </td>
-                <td><a class="btn btn-outline-danger" href="{% url 'fii:deletar_operacao' pk=operacao.id %}">Apagar</a>
+                <td>
+                    <a class="btn btn-outline-danger" href="{% url 'fii:deletar_operacao' pk=operacao.id %}">Apagar</a>
                 </td>
             </tr>
             {% endfor %}

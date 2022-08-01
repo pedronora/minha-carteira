@@ -12,6 +12,8 @@
                 <th>Código</th>
                 <th>Empresa</th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +25,11 @@
                 <td>{{ acao.nome }}</td>
                 <td>
                     <a class="btn btn-outline-success" href="{% url 'acao:editar_acao' pk=acao.pk %}">Editar</a>
+                </td>
+                <td>
                     <a class="btn btn-outline-primary" href="{% url 'acao:detalhes_acao' pk=acao.pk %}">Detalhes</a>
+                </td>
+                <td>
                     <a class="btn btn-outline-danger" href="{% url 'acao:deletar_acao' pk=acao.pk %}">Apagar</a>
                 </td>
             </tr>

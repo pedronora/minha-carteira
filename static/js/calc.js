@@ -45,6 +45,7 @@ function mostrarTabela(custos, sumTotal) {
         let removeBtn = document.createElement("button")
         removeBtn.classList.add("btn")
         removeBtn.classList.add("btn-outline-danger")
+        removeBtn.classList.add("btn-sm")
         removeBtn.innerText = "Remover"
 
         removeBtn.addEventListener("click", _ => {

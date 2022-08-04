@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', False)
 
-ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net', '127.0.0.1']
+ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://minha-carteira.azurewebsites.net']
 
@@ -136,6 +136,9 @@ USE_THOUSAND_SEPARATOR = True
 STATIC_URL = 'static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 
 # Default primary key field type

@@ -29,5 +29,5 @@ urlpatterns = [
      # CRUD - AcoesByUser
      path('deletar/<int:pk>', views.DeletarAcaoByUser.as_view(), name='deletar_acao_user'),
 
-     path('divisao/', views.calcNota, name='divisao')
+     path('divisao/', views.CalcNota.as_view(), name='divisao')
 ]

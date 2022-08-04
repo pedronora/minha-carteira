@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from .models import Acao, AcaoByUser, Operacao
 from .forms import AddAcaoForm, UpSertAcaoForm, UpSertOperacaoForm
-from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -65,12 +65,11 @@ def consolidar_bd(queryset):
 
 
 # Create your views here.
-def calcNota(request):
-    return render(request, 'calc.html', {'title': ' - Divisão da Nota de Negociação'})
+class CalcNota(TemplateView):
+    template_name = 'calc.html'
+
 
 # CRUD - Admin - Acão
-
-
 class ListarAcao(LoginRequiredMixin, UserPassesTestMixin, ListView):
     login_url = 'usuarios:entrar'
     model = Acao

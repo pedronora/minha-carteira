@@ -65,7 +65,6 @@ let addBtn = document.getElementById("addBtn")
 let resultados = document.getElementById("resultados")
 let tabela = document.getElementById("table")
 let tabelaDados = document.getElementById("tableBody")
-// tabela.remove()
 
 let totalNota
 let dados = []

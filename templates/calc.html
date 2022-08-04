@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content%}
+{% load static %}
+<h1>Divisão da Nota de Negociação</h1>
+<div class="row">
+    <div class="col">
+        <form id="form">
+            <div class="form-floating">
+                <input id="valorNota" class="form-control my-2" type="number" placeholder="Valor da Nota" required>
+                <label for="valorNota">Valor da Nota</label>
+            </div>
+            <div class="form-floating">
+                <input id="codigo" class="form-control my-2" type="text" placeholder="Código" required>
+                <label for="codigo">Código</label>
+            </div>
+            <div class="form-floating">
+                <input id="preco" class="form-control my-2" type="number" placeholder="Preço" required>
+                <label for="preco">Preço</label>
+            </div>
+            <div class="form-floating">
+                <input id="quantidade" class="form-control my-2" type="number" placeholder="Quantidade" required>
+                <label for="quantidade">Quantidade</label>
+            </div>
+            <input id="addBtn" class="btn btn-primary my-2" type="submit" value="Adicionar">
+        </form>
+    </div>
+
+
+    <div class="col">
+        <div class="table-responsive" id="resultados">
+            <table class="table table-striped" id="table">
+                <thead>
+                    <tr class="align-middle text-center">
+                        <th>Ativo</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Custos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/js/calc.js' %}"></script>
+{% endblock %}

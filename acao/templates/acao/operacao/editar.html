@@ -3,6 +3,7 @@
 {% block content%}
 
 <h1 class="mb-4">Editar: {{ operacao.acao }}</h1>
+<p><a href="{% url 'acao:divisao' %}" target="_blank">Dividir custos?</a></p>
 
 <form method="POST">
     {% csrf_token %}

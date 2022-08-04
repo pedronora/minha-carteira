@@ -1,7 +1,7 @@
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from .models import Acao, AcaoByUser, Operacao
 from .forms import AddAcaoForm, UpSertAcaoForm, UpSertOperacaoForm
@@ -65,9 +65,12 @@ def consolidar_bd(queryset):
 
 
 # Create your views here.
-
+def calcNota(request):
+    return render(request, 'calc.html', {'title': ' - Divisão da Nota de Negociação'})
 
 # CRUD - Admin - Acão
+
+
 class ListarAcao(LoginRequiredMixin, UserPassesTestMixin, ListView):
     login_url = 'usuarios:entrar'
     model = Acao
@@ -177,9 +180,8 @@ class DeletarAcaoByUser(LoginRequiredMixin, DeleteView):
         acao_by_user.delete()
 
         messages.warning(self.request, f'{acao_by_user} deletada com sucesso!')
-        
+
         return HttpResponseRedirect(self.get_success_url())
-    
 
 
 # CRUD - Operações

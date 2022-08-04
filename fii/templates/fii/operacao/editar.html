@@ -2,6 +2,8 @@
 
 {% block content%}
 <h1 class="mb-4">Editar: {{ operacao.fii }}</h1>
+<p><a href="{% url 'fii:divisao' %}" target="_blank">Dividir custos?</a></p>
+
 <form method="POST">
     <form method="POST">
         {% csrf_token %}

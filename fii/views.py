@@ -65,6 +65,9 @@ def consolidar_bd(queryset):
 
 
 # Create your views here.
+def calcNota(request):
+    return render(request, 'calc.html', {'title': ' - Divisão da Nota de Negociação'})
+
 # CRUD - Admin - FII
 class ListarFII(LoginRequiredMixin, UserPassesTestMixin, ListView):
     login_url = 'usuarios:entrar'

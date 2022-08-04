@@ -1,7 +1,7 @@
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from .models import Acao, AcaoByUser, Operacao
 from .forms import AddAcaoForm, UpSertAcaoForm, UpSertOperacaoForm
@@ -65,8 +65,13 @@ def consolidar_bd(queryset):
 
 
 # Create your views here.
-class CalcNota(TemplateView):
+class CalcNota(LoginRequiredMixin, TemplateView):
     template_name = 'calc.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = ' - Divisão da Nota de Negociação'
+        return context
 
 
 # CRUD - Admin - Acão

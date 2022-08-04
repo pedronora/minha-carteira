@@ -2,9 +2,9 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView, TemplateView
 from .forms import AddFIIForm, UpSertFiiForm, UpSertOperacaoForm
 from .models import FII, FIIByUser, Operacao
 
@@ -65,8 +65,14 @@ def consolidar_bd(queryset):
 
 
 # Create your views here.
-def calcNota(request):
-    return render(request, 'calc.html', {'title': ' - Divisão da Nota de Negociação'})
+class CalcNota(LoginRequiredMixin, TemplateView):
+    template_name = 'calc.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = ' - Divisão da Nota de Negociação'
+        return context
+
 
 # CRUD - Admin - FII
 class ListarFII(LoginRequiredMixin, UserPassesTestMixin, ListView):

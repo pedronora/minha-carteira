@@ -30,5 +30,5 @@ urlpatterns = [
     path('deletar/<int:pk>', views.DeletarFIIByUser.as_view(),
          name='deletar_fii_user'),
 
-    path('divisao/', views.calcNota, name='divisao')
+    path('divisao/', views.CalcNota.as_view(), name='divisao')
 ]

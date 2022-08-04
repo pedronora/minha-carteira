@@ -66,6 +66,7 @@ def consolidar_bd(queryset):
 
 # Create your views here.
 class CalcNota(LoginRequiredMixin, TemplateView):
+    login_url = 'usuarios:entrar'
     template_name = 'calc.html'
 
     def get_context_data(self, **kwargs):

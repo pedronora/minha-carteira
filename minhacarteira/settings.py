@@ -31,13 +31,14 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', False)
 
-ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net']
+ALLOWED_HOSTS = ['minha-carteira.azurewebsites.net', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://minha-carteira.azurewebsites.net']
 
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'acao.apps.AcaoConfig',
     'fii.apps.FiiConfig',
     'home.apps.HomeConfig',

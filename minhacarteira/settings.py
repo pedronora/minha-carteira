@@ -38,7 +38,6 @@ CSRF_TRUSTED_ORIGINS = ['https://minha-carteira.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
     'acao.apps.AcaoConfig',
     'fii.apps.FiiConfig',
     'home.apps.HomeConfig',

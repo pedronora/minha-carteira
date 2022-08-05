@@ -79,6 +79,7 @@ class CalcNota(LoginRequiredMixin, TemplateView):
 class ListarAcao(LoginRequiredMixin, UserPassesTestMixin, ListView):
     login_url = 'usuarios:entrar'
     model = Acao
+    paginate_by = 10
     template_name = 'acao/admin/listar.html'
 
     def test_func(self):
@@ -229,6 +230,7 @@ class CriarOperacao(LoginRequiredMixin, CreateView):
 class DetalhesOperacoesAcao(LoginRequiredMixin, ListView):
     login_url = 'usuarios:entrar'
     template_name = 'acao/operacao/detalhes_operacoes_acao.html'
+    paginate_by = 10
 
     def get_queryset(self):
         self.acao = get_object_or_404(Acao, pk=self.kwargs['pk'])

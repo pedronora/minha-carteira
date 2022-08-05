@@ -80,6 +80,7 @@ class ListarFII(LoginRequiredMixin, UserPassesTestMixin, ListView):
     login_url = 'usuarios:entrar'
     model = FII
     template_name = 'fii/admin/listar.html'
+    paginate_by = 10
 
     def test_func(self):
         return self.request.user.is_superuser
@@ -228,6 +229,7 @@ class CriarOperacao(LoginRequiredMixin, CreateView):
 class DetalhesOperacoesFII(LoginRequiredMixin, ListView):
     login_url = 'usuarios:entrar'
     template_name = 'fii/operacao/detalhes_operacoes_fii.html'
+    paginate_by = 10
 
     def get_queryset(self):
         self.fii = get_object_or_404(FII, pk=self.kwargs['pk'])

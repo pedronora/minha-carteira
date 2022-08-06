@@ -18,7 +18,8 @@ function calcCustos() {
             removeChildElement(tabelaDados)
             mostrarTabela(custos, sumTotal)
         } else {
-            alert("Erro! valor das operações é maior que o valor da nota!")
+            dados.pop()
+            alert("Erro! O valor das operações é maior que o valor da nota!")
         }
 }
 

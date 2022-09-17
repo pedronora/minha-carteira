@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1>Página não encontrada!</h1>
+
+<h2>O endereço que você tentou acessar é inexistente.</h2>
+
+<a class="mt-4" href="{% url 'home' %}"><button class="btn btn-primary">Retornar</button></a>
+
+{% endblock %}

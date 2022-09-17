@@ -24,7 +24,6 @@ function calcCustos() {
 }
 
 function mostrarTabela(custos, sumTotal) {
-    // resultados.appendChild(tabela)
     dados.forEach(op => {
         let linha = document.createElement("tr")
         linha.classList.add("align-middle")
